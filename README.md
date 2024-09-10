@@ -13,11 +13,12 @@
 
 ## TechStack
 - Back-End
-  - ![image]([./images/accounts_login.png](https://camo.githubusercontent.com/7d5764a6c6bd91d84ba33e5f48649daebbd51e96335e9aceb61154d2a3778bbe/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f507974686f6e2d3337373641423f7374796c653d666f722d7468652d6261646765266c6f676f3d507974686f6e266c6f676f436f6c6f723d7768697465)) 3.10.11
+  - <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 3.10.11
 - framework
-  -django 4.2
+  - <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white"> 4.2
 - database
-  -sqlite3
+  -<img src="https://img.shields.io/badge/sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white">
+
 
 ## Installation
 1. Clone the repo
