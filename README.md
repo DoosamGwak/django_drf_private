@@ -212,11 +212,14 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-  case1:
-  ![image](..png)
+  case1: fail 1 
+  ![image](./images/account_delete_fail.png)
 
-  case2: 
-  ![image](..png)
+  case2: fail 2
+  ![image](./images/account_delete_fail_2.png)
+  
+  case3: sucess
+  ![image](./images/account_delete_sucess.png)
       
     </div>
   </details>
