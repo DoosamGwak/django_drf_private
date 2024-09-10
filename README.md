@@ -21,9 +21,13 @@
 
 ## Installation
 1. Clone the repo
-```git clone https://github.com/github_username/repo_name.git```
+```
+git clone https://github.com/github_username/repo_name.git
+```
 2. Install pip packages
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 3. check settings.py
 ```
 SECRET_KEY = "enter SECRET_KEY"
@@ -130,7 +134,7 @@ DEBUG = env("DEBUG")
     - input in body
       - Required: No need
 
-  ![image](./images/accounts_logout.png)
+    ![image](./images/accounts_logout.png)
 
     </div>
   </details>
@@ -258,7 +262,7 @@ DEBUG = env("DEBUG")
     <summary>follow</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/follow/<str:username>/
+    - Endpoint : api/accounts/follow/&#60;str:username>/
     - method : POST
     - input in header
       - Required: access_token
@@ -284,7 +288,7 @@ DEBUG = env("DEBUG")
     <summary>unfollow</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/follow/<str:username>/
+    - Endpoint : api/accounts/follow/&#60;str:username>/
     - method : DELETE
     - input in header
       - Required: access_token
@@ -293,14 +297,14 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-  case1: didn't follow
-  ![image](./images/unfollow_fail2.png)
+    case1: didn't follow
+    ![image](./images/unfollow_fail2.png)
 
-  case2: can't unfollow self
-  ![image](./images/unfollow_fail1.png)
+    case2: can't unfollow self
+    ![image](./images/unfollow_fail1.png)
 
-  case3: sucess
-  ![image](./images/unfollow_sucess.png)
+    case3: sucess
+    ![image](./images/unfollow_sucess.png)
       
     </div>
   </details>
