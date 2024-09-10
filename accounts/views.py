@@ -38,6 +38,10 @@ class ProfileView(RetrieveUpdateAPIView):
     serializer_class = ProfileSerializer
     lookup_field = "username"
 
+    def get(self, request, *args, **kwargs):
+        self.permission_classes = (IsAuthenticated,)
+        return self.retrieve(request, *args, **kwargs)
+
 
 class ProfileDeleteView(DestroyAPIView):
     queryset = User.objects.all()

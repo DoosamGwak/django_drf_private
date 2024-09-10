@@ -8,10 +8,13 @@ class CustomBirthdayValidator:
         birthday = list(map(int, (self.context["request"].data["birthday"]).split("-")))
         now = timezone.now()
         now_arr = [now.year, now.month, now.day]
+        now_arr2 = [now.year - 15, now.month, now.day]
         if birthday > now_arr:
             raise ValidationError(
                 {"msg": "유효하지 않은 생일입니다 다시 입력해주세요."}
             )
+        elif birthday > now_arr2:
+            raise ValidationError({"msg": "15세 이상만 가입할 수 있습니다.."})
         return value
 
 

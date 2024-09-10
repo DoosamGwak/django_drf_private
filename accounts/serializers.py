@@ -31,13 +31,15 @@ class ProfileSerializer(serializers.ModelSerializer):
         exclude = (
             "groups",
             "user_permissions",
-        )
-        read_only_fields = (
             "is_staff",
             "is_active",
             "is_superuser",
-            "last_login",
+            "password",
+            "username",
+        )
+        read_only_fields = (
             "date_joined",
+            "last_login",
         )
 
 

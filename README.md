@@ -11,10 +11,6 @@
 ## Duration
 - 2024.08.28 ~ Now
 
-## Project Architecture
-- erd
-![image](..png)
-
 ## TechStack
 - Back-End
   -python 3.10.11
@@ -34,7 +30,11 @@ SECRET_KEY = "enter SECRET_KEY"
 DEBUG = env("DEBUG")
 ```
 
-## Project Architecture
+## Architecture
+- erd
+![image](./images/erd.png)
+
+- project architecture
 ```
 📦 
 ├─ .gitignore
@@ -85,10 +85,22 @@ DEBUG = env("DEBUG")
     - method : POST
     - input in body
       - Required: username, password, email, name, nickname, birthday
-      - Optional: sex(choice:M,W,N(default)), introduce
+      - Optional: sex(choice: M, W, N(default)), introduce
+    - access
+      - Over 15 years old can signup
 
-  ![image](..png)
-      
+    case1: signup_sucess
+    ![image](./images/accounts_signup_sucess.png)
+    
+    case2: username validation fail
+    ![image](./images/accounts_signup_username_fail.png)
+
+    case3: email validation fail
+    ![image](./images/accounts_signup_email_fail.png)
+
+    case4: birthday validation fail
+    ![image](./images/accounts_signup_birthday_fail.png)
+
     </div>
   </details>
   
@@ -102,7 +114,7 @@ DEBUG = env("DEBUG")
     - input in body
       - Required: password
 
-  ![image](..png)
+  ![image](./images/accounts_login.png)
     </div>
   </details>
   
@@ -118,12 +130,8 @@ DEBUG = env("DEBUG")
     - input in body
       - Required: No need
 
-  case1:
-  ![image](..png)
+  ![image](./images/accounts_logout.png)
 
-  case2: 
-  ![image](..png)
-      
     </div>
   </details>
   
@@ -139,11 +147,7 @@ DEBUG = env("DEBUG")
     - input in body
       - Required: refresh(it means refresh_token)
 
-  case1:
-  ![image](..png)
-
-  case2: 
-  ![image](..png)
+  ![image](./images/accounts_refresh.png)
       
     </div>
   </details>
@@ -159,14 +163,10 @@ DEBUG = env("DEBUG")
       - Required: access_token
     - input in body
       - Required: No need
-    - access
-      - Owner only
 
   case1:
-  ![image](..png)
+  ![image](./images/account_profile_detail.png)
 
-  case2: 
-  ![image](..png)
       
     </div>
   </details>
@@ -181,15 +181,19 @@ DEBUG = env("DEBUG")
     - input in header
       - Required: access_token
     - input in body
-      - Optional: email, name, nickname, birthday, sex(choice:M,W,N(default)), introduce 
+      - Optional: email, name, nickname, birthday, sex(choice:M, W, N(default)), introduce 
     - access
       - Owner only
 
-  case1:
-  ![image](..png)
 
-  case2: 
-  ![image](..png)
+  case1: Not owner
+  ![image](./images/account_profile_update_url_fail.png)
+
+  case2: validation fail
+  ![image](./images/account_profile_update_fail_1.png)
+
+  case3: sucess
+  ![image](./images/account_profile_update_sucess.png)
       
     </div>
   </details>
@@ -231,11 +235,17 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-  case1:
-  ![image](..png)
+  case1: new password validation fail1
+  ![image](./images/account_change_password_fail_1.png)
 
-  case2: 
-  ![image](..png)
+  case2: new password validation fail2
+  ![image](./images/account_change_password_fail_2.png)
+
+  case3: old password validation fail
+  ![image](./images/account_change_password_fail_3.png)
+
+  case4: sucess
+  ![image](./images/account_change_password_sucess.png)
       
     </div>
   </details>
@@ -254,11 +264,14 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-  case1:
-  ![image](..png)
+  case1: already followed
+  ![image](./images/follow_fail1.png)
 
-  case2: 
-  ![image](..png)
+  case2: can't follow self
+  ![image](./images/follow_fail2.png)
+
+  case3: sucess
+  ![image](./images/follow_sucess.png)
       
     </div>
   </details>
@@ -277,11 +290,14 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-  case1:
-  ![image](..png)
+  case1: didn't follow
+  ![image](./images/unfollow_fail2.png)
 
-  case2: 
-  ![image](..png)
+  case2: can't unfollow self
+  ![image](./images/unfollow_fail1.png)
+
+  case3: sucess
+  ![image](./images/unfollow_sucess.png)
       
     </div>
   </details>
@@ -301,7 +317,7 @@ DEBUG = env("DEBUG")
       - Required: title, content
       - Optional: image
 
-    ![image](./spartamarket-readme-img/products-create.png)
+    ![image](.)
 
     </div>
   </details>
@@ -319,19 +335,19 @@ DEBUG = env("DEBUG")
       - Required: No need
 
     case1: 
-    ![image](./spartamarket-readme-img/products-get.png)
+    ![image](.)
 
     case2: 
-    ![image](./spartamarket-readme-img/products-not-exist.png)
+    ![image](.)
 
     -additional features
       <details>
         <summary>pagenation</summary>
         <div markdown="1">
 
-        - There are 10 products on one page, and the page number is entered through query string.
+        - There are 10 products on one page, and the page number is entered through query string. ex -> end of url add "?page=2"
         
-        ![image](./spartamarket-readme-img/products-search.png)
+        ![image](.)
 
         </div>
       </details>
@@ -343,7 +359,7 @@ DEBUG = env("DEBUG")
 
         - It can be filtered by title, content, and the search term is passed through query string
 
-        ![image](./spartamarket-readme-img/products-search.png)
+        ![image](.)
 
         </div>
       </details>
@@ -362,7 +378,7 @@ DEBUG = env("DEBUG")
     - input in body
       - Required: No need
 
-    ![image](./spartamarket-readme-img/product-edit.png)
+    ![image](.)
 
     </div>
   </details>
@@ -382,7 +398,7 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-    ![image](./spartamarket-readme-img/product-edit.png)
+    ![image](.)
 
     </div>
   </details>
@@ -402,10 +418,10 @@ DEBUG = env("DEBUG")
       - Owner only
 
     case1:
-    ![image](./spartamarket-readme-img/products-delete.png)
+    ![image](.)
 
     case2:
-    ![image](./spartamarket-readme-img/products-cannot-delete.png)
+    ![image](.)
 
     </div>
   </details>
