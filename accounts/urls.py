@@ -15,12 +15,12 @@ from .views import (
 
 app_name = "accounts"
 urlpatterns = [
-    path("login/", TokenObtainPairView.as_view(), name="login"),
-    path("refresh/", TokenRefreshView.as_view(), name="refresh"),
-    path("logout/", TokenBlacklistView.as_view(), name="logout"),
     path("", SignupView.as_view(), name="signup"),
+    path("login/", TokenObtainPairView.as_view(), name="login"),
+    path("logout/", TokenBlacklistView.as_view(), name="logout"),
+    path("refresh/", TokenRefreshView.as_view(), name="refresh"),
     path("profile/", ProfileDeleteView.as_view(), name="profile_delete"),
     path("profile/<str:username>/", ProfileView.as_view(), name="profile"),
-    path("password/<str:username>/", PasswordChangeView.as_view(), name="password"),
+    path("password/", PasswordChangeView.as_view(), name="password"),
     path("follow/<str:username>/", FollowView.as_view(), name="follow"),
 ]

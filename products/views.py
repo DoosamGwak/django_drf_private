@@ -36,6 +36,10 @@ class ProductRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     )
     serializer_class = ProductDetailSerializer
 
+    def get(self, request, *args, **kwargs):
+        self.permission_classes = (IsAuthenticated,)
+        return self.retrieve(request, *args, **kwargs)
+
 
 class ProductListView(ListAPIView):
     queryset = Product.objects.annotate(like_count=Count("user_likes"))

@@ -72,7 +72,9 @@ class PasswordChangeView(UpdateAPIView):
         OwnerOnly,
     )
     serializer_class = PasswordChangeSerializer
-    lookup_field = "username"
+
+    def get_object(self):
+        return self.request.user
 
 
 class FollowView(APIView):
