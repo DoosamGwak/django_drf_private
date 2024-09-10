@@ -2,17 +2,26 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
-from .validators import CustomPasswordValidator, CustomProfileDeleteValidator
+from .validators import (
+    CustomPasswordValidator,
+    CustomProfileDeleteValidator,
+    CustomBirthdayValidator,
+)
 
 
-class SignupSerializer(serializers.ModelSerializer):
+class SignupSerializer(CustomBirthdayValidator, serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        exclude = (
-            "groups",
-            "user_permissions",
-            "last_login",
-            "date_joined",
+        fields = (
+            "id",
+            "password",
+            "username",
+            "email",
+            "name",
+            "nickname",
+            "birthday",
+            "sex",
+            "introduce",
         )
 
 
@@ -36,10 +45,11 @@ class ProfileDeleteSerializer(
     CustomProfileDeleteValidator, serializers.ModelSerializer
 ):
     check_password = serializers.CharField(write_only=True, required=True)
+    refresh = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = get_user_model()
-        fields = ("check_password",)
+        fields = ("check_password", "refresh")
 
 
 class PasswordChangeSerializer(CustomPasswordValidator, serializers.ModelSerializer):

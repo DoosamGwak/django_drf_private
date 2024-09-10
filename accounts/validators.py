@@ -1,7 +1,29 @@
 from rest_framework.exceptions import ValidationError
+from django.utils import timezone
+from rest_framework_simplejwt.tokens import RefreshToken
+
+
+class CustomBirthdayValidator:
+    def validate_birthday(self, value):
+        birthday = list(map(int, (self.context["request"].data["birthday"]).split("-")))
+        now = timezone.now()
+        now_arr = [now.year, now.month, now.day]
+        if birthday > now_arr:
+            raise ValidationError(
+                {"msg": "유효하지 않은 생일입니다 다시 입력해주세요."}
+            )
+        return value
 
 
 class CustomProfileDeleteValidator:
+    def validata_refresh(self, value):
+        data = self.context["request"].data
+        if not "refresh" in data:
+            raise ValidationError({"msg": "refresh_token 값을 입력해주세요."})
+        refresh_token = RefreshToken(data["refresh"])
+        refresh_token.blacklist()
+        return value
+
     def validate_check_password(self, value):
         user = self.context["request"].user
         if not user.check_password(value):

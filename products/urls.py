@@ -13,5 +13,5 @@ urlpatterns = [
     path(
         "<int:pk>/", ProductRetrieveUpdateDestroyView.as_view(), name="product_detail"
     ),
-    path("<int:pk>/like/", ProductLikeView, name="product_detail"),
+    path("<int:pk>/like/", ProductLikeView.as_view(), name="product_like"),
 ]
