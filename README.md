@@ -320,7 +320,7 @@ DEBUG = env("DEBUG")
       - Required: title, content
       - Optional: image
 
-    ![image](.)
+    ![image](./images/products_create.png)
 
     </div>
   </details>
@@ -337,35 +337,17 @@ DEBUG = env("DEBUG")
     - input in body
       - Required: No need
 
-    case1: 
-    ![image](.)
-
-    case2: 
-    ![image](.)
+    ![image](./images/products_list.png)
 
     -additional features
-      <details>
-        <summary>pagenation</summary>
-        <div markdown="1">
-
+      -pagenation
         - There are 10 products on one page, and the page number is entered through query string. ex -> end of url add "?page=2"
-        
-        ![image](.)
+        ![image](./images/products_list_page.png)
 
-        </div>
-      </details>
-
-
-      <details>
-        <summary>filtering</summary>
-        <div markdown="1">
-
+      -filtering
         - It can be filtered by title, content, and the search term is passed through query string
+        ![image](./images/products_list_search.png)
 
-        ![image](.)
-
-        </div>
-      </details>
     </div>
   </details>
   
@@ -381,7 +363,7 @@ DEBUG = env("DEBUG")
     - input in body
       - Required: No need
 
-    ![image](.)
+    ![image](./images/products_detail.png)
 
     </div>
   </details>
@@ -401,7 +383,11 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-    ![image](.)
+    case1: Not owner
+    ![image](./images/products_update_fail.png)
+
+    case2: sucess
+    ![image](./images/products_update_sucess.png)
 
     </div>
   </details>
@@ -412,7 +398,7 @@ DEBUG = env("DEBUG")
     <div markdown="1">
 
     - endpoint : /api/products/&#60;int:productID>
-    - method : PUT
+    - method : DELETE
     - input in header
       - Required: access_token
     - input in body
@@ -420,11 +406,57 @@ DEBUG = env("DEBUG")
     - access
       - Owner only
 
-    case1:
-    ![image](.)
+    case1: Not Owner
+    ![image](./images/products_delete_fail.png)
 
-    case2:
-    ![image](.)
+    case2: sucess
+    ![image](./images/products_delete_sucess.png)
+
+    </div>
+  </details>
+
+
+  <details>
+    <summary>product like</summary>
+    <div markdown="1">
+
+    - endpoint : /api/products/&#60;int:productID>/like/
+    - method : POST
+    - input in header
+      - Required: access_token
+    - input in body
+      - Required: No need
+    - access
+      - Owner only
+
+    case1: Not Owner
+    ![image](./images/products_delete_fail.png)
+
+    case2: sucess
+    ![image](./images/products_delete_sucess.png)
+
+    </div>
+  </details>
+
+
+  <details>
+    <summary>product like cancel</summary>/like/
+    <div markdown="1">
+
+    - endpoint : /api/products/&#60;int:productID>
+    - method : DELETE
+    - input in header
+      - Required: access_token
+    - input in body
+      - Required: No need
+    - access
+      - Owner only
+
+    case1: Not Owner
+    ![image](./images/products_delete_fail.png)
+
+    case2: sucess
+    ![image](./images/products_delete_sucess.png)
 
     </div>
   </details>
