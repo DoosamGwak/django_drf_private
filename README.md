@@ -85,27 +85,27 @@ DEBUG = env("DEBUG")
     <summary>signup</summary>
     <div markdown="1">
 
-    - endpoint : api/accounts/
-    - method : POST
-    - input in body
-      - Required: username, password, email, name, nickname, birthday
-      - Optional: sex(choice: M, W, N(default)), introduce
-    - access
-      - Over 15 years old can signup
+   - endpoint : api/accounts/
+   - method : POST
+   - input in body
+     - Required: username, password, email, name, nickname, birthday
+     - Optional: sex(choice: M, W, N(default)), introduce
+   - access
+     - Over 15 years old can signup
 
-    case1: signup_sucess
-    ![image](./images/accounts_signup_sucess.png)
-    
-    case2: username validation fail
-    ![image](./images/accounts_signup_username_fail.png)
+   case1: signup_sucess
+   ![image](./images/accounts_signup_sucess.png)
+   
+   case2: username validation fail
+   ![image](./images/accounts_signup_username_fail.png)
 
-    case3: email validation fail
-    ![image](./images/accounts_signup_email_fail.png)
+   case3: email validation fail
+   ![image](./images/accounts_signup_email_fail.png)
 
-    case4: birthday validation fail
-    ![image](./images/accounts_signup_birthday_fail.png)
+   case4: birthday validation fail
+   ![image](./images/accounts_signup_birthday_fail.png)
 
-    </div>
+   </div>
   </details>
   
 
@@ -113,10 +113,10 @@ DEBUG = env("DEBUG")
     <summary>login</summary>
     <div markdown="1">
 
-    - endpoint : api/accounts/login/
-    - method : POST
-    - input in body
-      - Required: password
+   - endpoint : api/accounts/login/
+   - method : POST
+   - input in body
+     - Required: password
 
   ![image](./images/accounts_login.png)
     </div>
@@ -127,16 +127,16 @@ DEBUG = env("DEBUG")
     <summary>logout</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/logout/
-    - method : POST
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
+   - Endpoint : api/accounts/logout/
+   - method : POST
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
 
-    ![image](./images/accounts_logout.png)
+   ![image](./images/accounts_logout.png)
 
-    </div>
+   </div>
   </details>
   
 
@@ -153,7 +153,7 @@ DEBUG = env("DEBUG")
 
   ![image](./images/accounts_refresh.png)
       
-    </div>
+   </div>
   </details>
 
 
@@ -161,18 +161,18 @@ DEBUG = env("DEBUG")
     <summary>profile detail inquiry</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/profile/&#60;str:username>/
-    - method : GET
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
+   - Endpoint : api/accounts/profile/&#60;str:username>/
+   - method : GET
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
 
   case1:
   ![image](./images/account_profile_detail.png)
 
       
-    </div>
+   </div>
   </details>
 
 
@@ -180,14 +180,14 @@ DEBUG = env("DEBUG")
     <summary>profile update</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/profile/&#60;str:username>/
-    - method : PUT
-    - input in header
-      - Required: access_token
-    - input in body
-      - Optional: email, name, nickname, birthday, sex(choice:M, W, N(default)), introduce 
-    - access
-      - Owner only
+   - Endpoint : api/accounts/profile/&#60;str:username>/
+   - method : PUT
+   - input in header
+     - Required: access_token
+   - input in body
+     - Optional: email, name, nickname, birthday, sex(choice:M, W, N(default)), introduce 
+   - access
+     - Owner only
 
 
   case1: Not owner
@@ -207,14 +207,14 @@ DEBUG = env("DEBUG")
     <summary>profile delete</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/profile/
-    - method : DELETE
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: password, refresh(means refresh_token)
-    - access
-      - Owner only
+   - Endpoint : api/accounts/profile/
+   - method : DELETE
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: password, refresh(means refresh_token)
+   - access
+     - Owner only
 
   case1: fail 1 
   ![image](./images/account_delete_fail.png)
@@ -225,7 +225,7 @@ DEBUG = env("DEBUG")
   case3: sucess
   ![image](./images/account_delete_sucess.png)
       
-    </div>
+   </div>
   </details>
 
 
@@ -233,14 +233,14 @@ DEBUG = env("DEBUG")
     <summary>password change</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/password/
-    - method : PUT
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: old_password, password1, password2 (password1 and password2 mean new password you want to set)
-    - access
-      - Owner only
+   - Endpoint : api/accounts/password/
+   - method : PUT
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: old_password, password1, password2 (password1 and password2 mean new password you want to set)
+   - access
+     - Owner only
 
   case1: new password validation fail1
   ![image](./images/account_change_password_fail_1.png)
@@ -254,7 +254,7 @@ DEBUG = env("DEBUG")
   case4: sucess
   ![image](./images/account_change_password_sucess.png)
       
-    </div>
+   </div>
   </details>
 
 
@@ -262,14 +262,14 @@ DEBUG = env("DEBUG")
     <summary>follow</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/follow/&#60;str:username>/
-    - method : POST
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
-    - access
-      - Owner only
+   - Endpoint : api/accounts/follow/&#60;str:username>/
+   - method : POST
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
+   - access
+     - Owner only
 
   case1: already followed
   ![image](./images/follow_fail1.png)
@@ -280,7 +280,7 @@ DEBUG = env("DEBUG")
   case3: sucess
   ![image](./images/follow_sucess.png)
       
-    </div>
+   </div>
   </details>
 
 
@@ -288,25 +288,25 @@ DEBUG = env("DEBUG")
     <summary>unfollow</summary>
     <div markdown="1">
 
-    - Endpoint : api/accounts/follow/&#60;str:username>/
-    - method : DELETE
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
-    - access
-      - Owner only
+   - Endpoint : api/accounts/follow/&#60;str:username>/
+   - method : DELETE
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
+   - access
+     - Owner only
 
-    case1: didn't follow
-    ![image](./images/unfollow_fail2.png)
+   case1: didn't follow
+   ![image](./images/unfollow_fail2.png)
 
-    case2: can't unfollow self
-    ![image](./images/unfollow_fail1.png)
+   case2: can't unfollow self
+   ![image](./images/unfollow_fail1.png)
 
-    case3: sucess
-    ![image](./images/unfollow_sucess.png)
-      
-    </div>
+   case3: sucess
+   ![image](./images/unfollow_sucess.png)
+     
+   </div>
   </details>
 
 
@@ -316,17 +316,17 @@ DEBUG = env("DEBUG")
     <summary>product registration</summary>
     <div markdown="1">
 
-    - endpoint : api/products/
-    - method : POST
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: title, content
-      - Optional: image
+   - endpoint : api/products/
+   - method : POST
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: title, content
+     - Optional: image
 
-    ![image](./images/products_create.png)
+   ![image](./images/products_create.png)
 
-    </div>
+   </div>
   </details>
 
 
@@ -334,25 +334,25 @@ DEBUG = env("DEBUG")
     <summary>product list inquiry</summary>
     <div markdown="1">
 
-    - endpoint : api/products/list/
-    - method : GET
-    - input in header
-      - Required: No need
-    - input in body
-      - Required: No need
+   - endpoint : api/products/list/
+   - method : GET
+   - input in header
+     - Required: No need
+   - input in body
+     - Required: No need
 
-    ![image](./images/products_list.png)
+   ![image](./images/products_list.png)
 
-    -additional features
-      -pagenation
-        - There are 10 products on one page, and the page number is entered through query string. ex -> end of url add "?page=2"
-        ![image](./images/products_list_page.png)
+   -additional features
+     -pagenation
+       - There are 10 products on one page, and the page number is entered through query string. ex -> end of url add "?page=2"
+       ![image](./images/products_list_page.png)
 
-      -filtering
-        - It can be filtered by title, content, and the search term is passed through query string
-        ![image](./images/products_list_search.png)
+     -filtering
+       - It can be filtered by title, content, and the search term is passed through query string
+       ![image](./images/products_list_search.png)
 
-    </div>
+   </div>
   </details>
   
 
@@ -360,16 +360,16 @@ DEBUG = env("DEBUG")
     <summary>product detail inquiry</summary>
     <div markdown="1">
 
-    - endpoint : /api/products/&#60;int:productID>
-    - method : GET
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
+   - endpoint : /api/products/&#60;int:productID>
+   - method : GET
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
 
-    ![image](./images/products_detail.png)
+   ![image](./images/products_detail.png)
 
-    </div>
+   </div>
   </details>
 
 
@@ -377,23 +377,23 @@ DEBUG = env("DEBUG")
     <summary>product update</summary>
     <div markdown="1">
 
-    - endpoint : /api/products/&#60;int:productID>
-    - method : PUT
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: title, content
-      - Optional: image, tags
-    - access
-      - Owner only
+   - endpoint : /api/products/&#60;int:productID>
+   - method : PUT
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: title, content
+     - Optional: image, tags
+   - access
+     - Owner only
 
-    case1: Not owner
-    ![image](./images/products_update_fail.png)
+   case1: Not owner
+   ![image](./images/products_update_fail.png)
 
-    case2: sucess
-    ![image](./images/products_update_sucess.png)
+   case2: sucess
+   ![image](./images/products_update_sucess.png)
 
-    </div>
+   </div>
   </details>
 
 
@@ -401,22 +401,22 @@ DEBUG = env("DEBUG")
     <summary>product delete</summary>
     <div markdown="1">
 
-    - endpoint : /api/products/&#60;int:productID>
-    - method : DELETE
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
-    - access
-      - Owner only
+   - endpoint : /api/products/&#60;int:productID>
+   - method : DELETE
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
+   - access
+     - Owner only
 
-    case1: Not Owner
-    ![image](./images/products_delete_fail.png)
+   case1: Not Owner
+   ![image](./images/products_delete_fail.png)
 
-    case2: sucess
-    ![image](./images/products_delete_sucess.png)
+   case2: sucess
+   ![image](./images/products_delete_sucess.png)
 
-    </div>
+   </div>
   </details>
 
 
@@ -424,22 +424,22 @@ DEBUG = env("DEBUG")
     <summary>product like</summary>
     <div markdown="1">
 
-    - endpoint : /api/products/&#60;int:productID>/like/
-    - method : POST
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
-    - access
-      - Owner only
+   - endpoint : /api/products/&#60;int:productID>/like/
+   - method : POST
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
+   - access
+     - Owner only
 
-    case1: Not Owner
-    ![image](./images/products_delete_fail.png)
+   case1: Not Owner
+   ![image](./images/products_delete_fail.png)
 
-    case2: sucess
-    ![image](./images/products_delete_sucess.png)
+   case2: sucess
+   ![image](./images/products_delete_sucess.png)
 
-    </div>
+   </div>
   </details>
 
 
@@ -447,20 +447,20 @@ DEBUG = env("DEBUG")
     <summary>product like cancel</summary>/like/
     <div markdown="1">
 
-    - endpoint : /api/products/&#60;int:productID>
-    - method : DELETE
-    - input in header
-      - Required: access_token
-    - input in body
-      - Required: No need
-    - access
-      - Owner only
+   - endpoint : /api/products/&#60;int:productID>
+   - method : DELETE
+   - input in header
+     - Required: access_token
+   - input in body
+     - Required: No need
+   - access
+     - Owner only
 
-    case1: Not Owner
-    ![image](./images/products_delete_fail.png)
+   case1: Not Owner
+   ![image](./images/products_delete_fail.png)
 
-    case2: sucess
-    ![image](./images/products_delete_sucess.png)
+   case2: sucess
+   ![image](./images/products_delete_sucess.png)
 
-    </div>
+   </div>
   </details>
