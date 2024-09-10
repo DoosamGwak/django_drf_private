@@ -76,7 +76,7 @@ DEBUG = env("DEBUG")
 
 
 ## How to use
-- accounts
+### accounts
   <details>
     <summary>signup</summary>
     <div markdown="1">
@@ -306,7 +306,7 @@ DEBUG = env("DEBUG")
   </details>
 
 
-- product
+### product
 
   <details>
     <summary>product registration</summary>
@@ -330,7 +330,7 @@ DEBUG = env("DEBUG")
     <summary>product list inquiry</summary>
     <div markdown="1">
 
-    - endpoint : api/products/
+    - endpoint : api/products/list/
     - method : GET
     - input in header
       - Required: No need
